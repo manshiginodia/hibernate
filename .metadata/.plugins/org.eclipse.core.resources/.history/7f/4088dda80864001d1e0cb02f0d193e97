@@ -1,0 +1,28 @@
+package com.nri;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+/**
+ * Hello world!
+ *
+ */
+public class I_TestORMBasic 
+{
+    public static void main( String[] args )
+    {
+        System.out.println( "Hibernate Started...." );
+        
+        //we need object of configuration
+        Configuration config = new Configuration();
+        //we need to configure session for hibernate
+        SessionFactory factory = config.configure().buildSessionFactory();
+        Session session = factory.openSession();
+        
+        System.out.println("session");
+        
+        session.close();
+        factory.close();
+    }
+}

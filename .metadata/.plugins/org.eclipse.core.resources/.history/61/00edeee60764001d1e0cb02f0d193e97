@@ -1,0 +1,13 @@
+package com.nri;
+
+/**
+ * Hello world!
+ *
+ */
+public class I_TestORMBasic 
+{
+    public static void main( String[] args )
+    {
+        System.out.println( "Hibernate Started...." );
+    }
+}
