@@ -2,6 +2,7 @@
 <section name="Workbench">
 	<section name="MavenProjectWizardLocationPage">
 		<list key="location">
+			<item value="D:\Hibernate\VII_HibernateNativeQuery\src\main\java\com\nri\TestNativeQuery.java"/>
 			<item value="D:\Hibernate\IV_HibernateMapping\src\main\java\com\nri\TestMToMMapping.java"/>
 			<item value="D:\Hibernate\III_HibernateMapping\src\main\java\com\nri\Test1M1Mapping.java"/>
 			<item value="D:\Hibernate\II_HibernateMapping\src\main\java\com\nri\TestToMapping.java"/>
@@ -29,6 +30,7 @@
 	<section name="Maven2ProjectWizardArchifactPage">
 		<list key="package">
 			<item value="com.nri"/>
+			<item value="com.nri.VII_HibernateNativeQuery"/>
 			<item value="com.nri.I_HibernetBasic"/>
 			<item value="com.nri.I_HibernateBasic"/>
 		</list>
@@ -36,6 +38,9 @@
 			<item value="com.nri"/>
 		</list>
 		<list key="artifactId">
+			<item value="HQLCRUD"/>
+			<item value="VII_HibernateNativeQuery"/>
+			<item value="Hibernate_Assignment"/>
 			<item value="VI_HibernateSecondLevelCache"/>
 			<item value="V_HibernateCaching"/>
 			<item value="IV_HibernateMapping"/>

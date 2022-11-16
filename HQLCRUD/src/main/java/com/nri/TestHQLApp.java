@@ -7,6 +7,8 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
+import org.hibernate.criterion.Projections;
+import org.hibernate.criterion.Restrictions;
 
 public class TestHQLApp {
 	static Configuration cfg;
@@ -144,7 +146,31 @@ public class TestHQLApp {
 		s.close();
 	}
 
-
+//Criteria API - These are used for querying on the columns
+	
+	private static void projectionFirst() {
+		s=getSession();
+		double sumtotalmarks = (Double)s.createCriteria(Trainees.class)
+				.setProjection(Projections.sum("tmarks"))
+				.uniqueResult();
+		
+		System.out.println("Sum total of trainees marks column as projected is "+sumtotalmarks);
+		s.close();
+	}
+	
+	private static void projectionSecond() {
+		s=getSession();
+		long totalcount = (Long)s.createCriteria(Trainees.class)
+				.setProjection(Projections.rowCount())
+				.add(Restrictions.like("tname", "%o%"))
+				.uniqueResult();
+		
+		System.out.println("total of trainees marks with 'o' in name as projected is "+totalcount);
+		s.close();
+	}
+	
+	
+	
 	public static void main(String[] args) {
 		System.out.println("Hibernate Trainess- Laptop tracking CRUD app using HQL");
 
@@ -153,6 +179,7 @@ public class TestHQLApp {
 		recordRetrieveUnique(22);
 		recordUpdate(22,"Dell");
 		recordDelete(22);
+		projectionFirst();
 		
 	}
 }
